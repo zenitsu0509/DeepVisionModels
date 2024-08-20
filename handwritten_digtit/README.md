@@ -1,15 +1,16 @@
 # Handwritten Digit Prediction Model
 
-Welcome to the Handwritten Digit Prediction project! This model uses deep learning techniques, including Neural Networks and Convolutional Neural Networks (CNNs), to predict handwritten digits. The model takes real-time user input, allowing the user to draw digits on a canvas and predicts the digit with high accuracy.
+Welcome to the Handwritten Digit Prediction project! This model leverages advanced deep learning techniques, including Neural Networks and Convolutional Neural Networks (CNNs), to accurately predict handwritten digits. The model is interactive, allowing users to draw digits on a canvas and receive real-time predictions.
 
 ## Project Overview
 
-This project is built using the MNIST dataset, a standard dataset for handwritten digit recognition. The model is designed to process grayscale images of digits drawn by the user and predict the corresponding digit in real-time. 
+This project is built on the MNIST dataset, a widely used benchmark for handwritten digit recognition. The model processes grayscale images of digits drawn by users and predicts the corresponding digit with high accuracy in real time.
 
-### Features
-- **Real-Time Prediction:** The model allows users to draw digits on a grey canvas using a black pen, and the model predicts the digit in real-time.
-- **Deep Learning Techniques:** Utilizes both traditional Neural Networks and Convolutional Neural Networks (CNNs) for accurate prediction.
-- **Custom Dataset Training:** The model is planned to be trained on a larger custom dataset, provided in the project folder, for further accuracy improvements.
+### Key Features
+
+- **Real-Time Prediction:** Users can draw digits on a grey canvas using a black pen, and the model will predict the digit instantaneously.
+- **Deep Learning Techniques:** The model integrates traditional Neural Networks and CNNs to achieve high prediction accuracy.
+- **Custom Dataset Training:** Future training will involve a larger custom dataset, included in the project folder, to further improve model accuracy.
 
 ## Getting Started
 
@@ -20,20 +21,19 @@ This project is built using the MNIST dataset, a standard dataset for handwritte
 - NumPy
 - Matplotlib
 - OpenCV (for image processing)
-## OR   
- you can run directly in google colab
+
+**Alternatively:** You can run the project directly in Google Colab.
+
 ### Installation
 
 1. **Clone the repository:**
    ```bash
-   git clone <https://github.com/zenitsu0509/DeepVisionModels.git>
-   cd <handwritten_digtit>
+   git clone https://github.com/zenitsu0509/DeepVisionModels.git
+   cd handwritten_digit
+## Contributions and Feedback
+I’m constantly working to enhance the model's accuracy. Feel free to explore the code, experiment with it, and provide any suggestions that could improve the project. Plans are also underway to train the model on a more extensive dataset for even better performance.
 
-### Contributions and Feedback
-I’m continuously working on improving the accuracy of the model. Feel free to use the code, play with it, and suggest changes that can enhance the project. I’m also planning to train the model on a larger dataset for even better performance.
-
-### Future Plans
-Training on a larger dataset: I plan to extend the training process to a more extensive custom dataset provided in the project folder.
-Accuracy Improvements: Ongoing efforts to optimize the model for higher accuracy.
-<br>
-## Happpy Coding😊
+## Future Plans
+Training on a Larger Dataset: I intend to expand the training process using a more comprehensive custom dataset available in the project folder.
+Accuracy Improvements: Continuous efforts are being made to fine-tune the model for higher accuracy.
+## Happy Coding 😊

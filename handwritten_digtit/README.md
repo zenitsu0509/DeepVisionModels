@@ -1,39 +1,94 @@
-# Handwritten Digit Prediction Model
+# Vision Transformer for Digit Recognition
 
-Welcome to the Handwritten Digit Prediction project! This model leverages advanced deep learning techniques, including Neural Networks and Convolutional Neural Networks (CNNs), to accurately predict handwritten digits. The model is interactive, allowing users to draw digits on a canvas and receive real-time predictions.
+## Overview
 
-## Project Overview
+This project implements a Vision Transformer (ViT) model for recognizing handwritten digits from the MNIST dataset. The model processes images drawn on a web-based canvas and predicts the corresponding digit. The application consists of a Flask backend serving the model and a simple front-end for user interaction.
 
-This project is built on the MNIST dataset, a widely used benchmark for handwritten digit recognition. The model processes grayscale images of digits drawn by users and predicts the corresponding digit with high accuracy in real time.
+## Table of Contents
 
-### Key Features
+- [Features](#features)
+- [Technologies Used](#technologies-used)
+- [Setup Instructions](#setup-instructions)
+- [Usage](#usage)
+- [API Endpoints](#api-endpoints)
+- [Model Training](#model-training)
+- [Contributing](#contributing)
 
-- **Real-Time Prediction:** Users can draw digits on a grey canvas using a black pen, and the model will predict the digit instantaneously.
-- **Deep Learning Techniques:** The model integrates traditional Neural Networks and CNNs to achieve high prediction accuracy.
-- **Custom Dataset Training:** Future training will involve a larger custom dataset, included in the project folder, to further improve model accuracy.
+## Features
 
-## Getting Started
+- Draw digits on a web canvas.
+- Predict handwritten digits using a Vision Transformer model.
+- Clear the canvas to start anew.
+- Responsive and user-friendly interface.
 
-### Prerequisites
+## Technologies Used
 
-- Python 3.x
-- TensorFlow/Keras
-- NumPy
-- Matplotlib
+- Python
+- Flask (for the backend API)
+- PyTorch (for building and running the Vision Transformer model)
 - OpenCV (for image processing)
+- HTML/CSS/JavaScript (for the frontend)
+- CORS (for cross-origin requests)
 
-**Alternatively:** You can run the project directly in Google Colab.
+## Setup Instructions
 
-### Installation
-
-1. **Clone the repository:**
+1. Clone the repository:
    ```bash
-   git clone https://github.com/zenitsu0509/DeepVisionModels.git
-   cd handwritten_digit
-## Contributions and Feedback
-I’m constantly working to enhance the model's accuracy. Feel free to explore the code, experiment with it, and provide any suggestions that could improve the project. Plans are also underway to train the model on a more extensive dataset for even better performance.
+   git clone https://github.com/zenitsu0509/DeepVisionModels/handwritten_digtit.git
+   cd your-repo
+Usage
+-----
 
-## Future Plans
-Training on a Larger Dataset: I intend to expand the training process using a more comprehensive custom dataset available in the project folder.
-Accuracy Improvements: Continuous efforts are being made to fine-tune the model for higher accuracy.
-## Happy Coding 😊
+1.  Run the Flask application:
+
+    bash
+
+    Copy code
+
+    `python app.py`
+
+2.  Open your web browser and navigate to `http://127.0.0.1:5000`.
+
+3.  Draw a digit on the canvas and click the "Predict" button to see the predicted digit.
+
+4.  Use the "Clear" button to reset the canvas.
+
+API Endpoints
+-------------
+
+-   **POST /predict**
+
+    -   **Description**: Predict the digit from the drawn image.
+    -   **Request Body**:
+
+        json
+
+        Copy code
+
+        `{
+          "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAA..."
+        }`
+
+    -   **Response**:
+
+        json
+
+        Copy code
+
+        `{
+          "prediction": 5
+        }`
+
+Model Training
+--------------
+
+If you need to retrain the Vision Transformer model, ensure you have the MNIST dataset and follow these steps:
+
+1.  Modify the training script to load the MNIST dataset.
+2.  Adjust hyperparameters such as batch size, learning rate, and number of epochs as needed.
+3.  Save the model as `vit_mnist_model.pth` after training.
+
+Contributing
+------------
+
+Contributions are welcome! Please feel free to submit a pull request or open an issue for any enhancements or bug fixes.

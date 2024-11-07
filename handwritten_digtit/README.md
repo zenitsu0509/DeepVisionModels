@@ -33,33 +33,35 @@ This project implements a Vision Transformer (ViT) model for recognizing handwri
 ## Setup Instructions
 
 1. Clone the repository:
-   ```bash
+
+```bash
    git clone https://github.com/zenitsu0509/DeepVisionModels/handwritten_digtit.git
    cd your-repo
-Usage
+```
+
 -----
 
-1.  Run the Flask application:
+1. Run the Flask application:
     `python app.py`
 
-2.  Open your web browser and navigate to `http://127.0.0.1:5000`.
+2. Open your web browser and navigate to `http://127.0.0.1:5000`.
 
-3.  Draw a digit on the canvas and click the "Predict" button to see the predicted digit.
+3. Draw a digit on the canvas and click the "Predict" button to see the predicted digit.
 
-4.  Use the "Clear" button to reset the canvas.
+4. Use the "Clear" button to reset the canvas.
 
 API Endpoints
 -------------
 
--   **POST /predict**
+- **POST /predict**
 
-    -   **Description**: Predict the digit from the drawn image.
-    -   **Request Body**:
+  - **Description**: Predict the digit from the drawn image.
+  - **Request Body**:
         `{
           "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAA..."
         }`
 
-    -   **Response**:
+  - **Response**:
         `{
           "prediction": 5
         }`
@@ -69,11 +71,12 @@ Model Training
 
 If you need to retrain the Vision Transformer model, ensure you have the MNIST dataset and follow these steps:
 
-1.  Modify the training script to load the MNIST dataset.
-2.  Adjust hyperparameters such as batch size, learning rate, and number of epochs as needed.
-3.  Save the model as `vit_mnist_model.pth` after training.
+1. Modify the training script to load the MNIST dataset.
+2. Adjust hyperparameters such as batch size, learning rate, and number of epochs as needed.
+3. Save the model as `vit_mnist_model.pth` after training.
 
-Contributing
-------------
+# Contributing
+
+---
 
 Contributions are welcome! Please feel free to submit a pull request or open an issue for any enhancements or bug fixes.

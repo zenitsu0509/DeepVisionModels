@@ -40,11 +40,6 @@ Usage
 -----
 
 1.  Run the Flask application:
-
-    bash
-
-    Copy code
-
     `python app.py`
 
 2.  Open your web browser and navigate to `http://127.0.0.1:5000`.
@@ -60,21 +55,11 @@ API Endpoints
 
     -   **Description**: Predict the digit from the drawn image.
     -   **Request Body**:
-
-        json
-
-        Copy code
-
         `{
           "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAA..."
         }`
 
     -   **Response**:
-
-        json
-
-        Copy code
-
         `{
           "prediction": 5
         }`

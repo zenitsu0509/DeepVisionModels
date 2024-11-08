@@ -16,36 +16,44 @@ api_endpoint = st.secrets["api_endpoint_mobilbit"]
 
 col1, col2 = st.columns(2)
 
-file = col1.file_uploader('Upload an image', type=['jpeg', 'jpg', 'png'])
+# File uploader
+file_uploader = col1.file_uploader('Upload an image', type=['jpeg', 'jpg', 'png'])
 
-col1.write("**Click on the image where you want the background to be removed.**")
 
-if file is not None:
+original_button = col1.button('Original')
+remove_bg_button = col1.button('Remove background')
+
+if file_uploader is not None:
     try:
-        image = Image.open(file).convert('RGB')
-        image = image.resize((880, int(image.height * 880 / image.width)))
-
+        image = Image.open(file_uploader).convert('RGB')
+        
         placeholder0 = col1.empty()
+        value = None
+        
         with placeholder0:
             value = im_coordinates(image)
             if value is not None:
                 print(value)
+                
+        
+        col1.image(image, use_column_width=False)
 
-        if col2.button('Original', use_container_width=True):
+        
+        if original_button:
             placeholder0.empty()
-            placeholder1 = col1.empty()
-            with placeholder1:
-                col1.image(image, use_column_width=True)
+            col1.image(image, use_column_width=False)
 
-        if col2.button('Remove background', use_container_width=True):
+        
+        if remove_bg_button:
             if value is None:
                 st.warning("Please click on the image first to select a point.")
             else:
                 placeholder0.empty()
                 placeholder2 = col1.empty()
 
-                filename = '{}_{}_{}.png'.format(file.name, value['x'], value['y'])
+                filename = f"{file_uploader.name}_{value['x']}_{value['y']}.png"
 
+             
                 if os.path.exists(filename):
                     result_image = cv2.imread(filename, cv2.IMREAD_UNCHANGED)
                 else:
@@ -61,15 +69,16 @@ if file is not None:
                     result_image_array = np.frombuffer(result_image_bytes, dtype=np.uint8)
                     result_image = cv2.imdecode(result_image_array, cv2.IMREAD_UNCHANGED)
 
+                    
                     cv2.imwrite(filename, result_image)
 
                 with placeholder2:
                     if len(result_image.shape) == 3 and result_image.shape[2] == 3:
                         result_image = cv2.cvtColor(result_image, cv2.COLOR_BGR2RGB)
-                    col1.image(result_image, use_column_width=True)
+                    col1.image(result_image, use_column_width=False)
 
                 with open(filename, "rb") as f:
-                    btn = col1.download_button(
+                    col1.download_button(
                         label="Download Image",
                         data=f,
                         file_name=filename,
@@ -77,4 +86,3 @@ if file is not None:
                     )
     except Exception as e:
         st.error(f"An error occurred: {str(e)}")
-        st.error("Error details:", exc_info=True)

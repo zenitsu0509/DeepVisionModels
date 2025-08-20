@@ -1,9 +1,3 @@
-
-!mkdir -p ~/.kaggle
-!cp kaggle.json ~/.kaggle/
-
-!kaggle datasets download -d sachinpatel21/az-handwritten-alphabets-in-csv-format
-
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
